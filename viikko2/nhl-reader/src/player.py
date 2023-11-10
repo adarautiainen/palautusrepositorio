@@ -5,6 +5,7 @@ class Player:
     def __init__(self, pdict):
         self.name = pdict['name']
         self.team = pdict['team']
+        self.nationality = pdict['nationality']
         self.goals = pdict['goals']
         self.assists = pdict['assists']
         self.sumofpoints = self.goals + self.assists
@@ -14,7 +15,7 @@ class Player:
 
 
 class PlayerReader:
-    def __int__(self, url):
+    def __init__(self, url):
         self.url = url
 
     def get_players(self):
@@ -23,25 +24,13 @@ class PlayerReader:
 
 
 class PlayerStats:
-    def __int__(self, reader):
+    def __init__(self, reader):
         self.players = reader.get_players()
 
-    def top_scorers_by_nationality(self, nat):
-        finnish = [player for player in self.players if player.nat == nat]
+    def top_scorers_by_nationality(self, nationality):
+        finnish = [player for player in self.players if player.nationality == nationality]
         for pl in finnish:
             pl.sumofpoints = pl.goals + pl.assists
         return sorted(finnish, key=lambda pl: pl.sumofpoints, reverse=True)
 
 
-def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2022-23/players"
-    reader = PlayerReader(url)
-    stats = PlayerStats(reader)
-    players = stats.top_scorers_by_nationality("FIN")
-
-    for player in players:
-        print(player)
-
-
-if __name__ == "__main__":
-    main()
