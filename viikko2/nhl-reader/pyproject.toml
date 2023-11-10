@@ -1,12 +1,11 @@
 [tool.poetry]
-name = "project-reader"
+name = "nhl-reader"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-toml = "^0.10.2"
 
 
 [build-system]
