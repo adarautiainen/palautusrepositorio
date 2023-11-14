@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.7 on darwin)" generated="20231114 14:45:00.980" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/tests">
+<suite id="s1-s1" name="Home" source="/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/tests/home.robot">
+<kw name="Open And Configure Browser" library="resource" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231114 14:45:01.060" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1029e7160&gt;</msg>
+<status status="PASS" starttime="20231114 14:45:01.059" endtime="20231114 14:45:01.060"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231114 14:45:01.060" endtime="20231114 14:45:01.060"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231114 14:45:01.060" endtime="20231114 14:45:01.060"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231114 14:45:01.060" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231114 14:45:01.060" endtime="20231114 14:45:01.903"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231114 14:45:01.903" endtime="20231114 14:45:01.903"/>
+</kw>
+<status status="PASS" starttime="20231114 14:45:01.059" endtime="20231114 14:45:01.903"/>
+</kw>
+<test id="s1-s1-t1" name="Click Login Link" line="8">
+<kw name="Go To Main Page" library="resource" type="SETUP">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231114 14:45:01.904" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg timestamp="20231114 14:45:02.022" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231114 14:45:02.022" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: headless chrome=119.0.6045.123)
+Stacktrace:
+0   chromedriver                        0x0000000102eae004 chromedriver + 4169732
+1   chromedriver                        0x0000000102ea5ff8 chromedriver + 4136952
+2   chromedriver                        0x0000000102afb500 chromedriver + 292096
+3   chromedriver                        0x0000000102af3f20 chromedriver + 261920
+4   chromedriver                        0x0000000102ae4790 chromedriver + 198544
+5   chromedriver                        0x0000000102ae5bd0 chromedriver + 203728
+6   chromedriver                        0x0000000102ae4aec chromedriver + 199404
+7   chromedriver                        0x0000000102ae39d0 chromedriver + 195024
+8   chromedriver                        0x0000000102ae397c chromedriver + 194940
+9   chromedriver                        0x0000000102ae1ef4 chromedriver + 188148
+10  chromedriver                        0x0000000102ae29e0 chromedriver + 190944
+11  chromedriver                        0x0000000102afdebc chromedriver + 302780
+12  chromedriver                        0x0000000102b7bda4 chromedriver + 818596
+13  chromedriver                        0x0000000102b7b818 chromedriver + 817176
+14  chromedriver                        0x0000000102b345e8 chromedriver + 525800
+15  chromedriver                        0x0000000102b354b8 chromedriver + 529592
+16  chromedriver                        0x0000000102e74334 chromedriver + 3932980
+17  chromedriver                        0x0000000102e78970 chromedriver + 3950960
+18  chromedriver                        0x0000000102e5c774 chromedriver + 3835764
+19  chromedriver                        0x0000000102e79478 chromedriver + 3953784
+20  chromedriver                        0x0000000102e4eab4 chromedriver + 3779252
+21  chromedriver                        0x0000000102e95914 chromedriver + 4069652
+22  chromedriver                        0x0000000102e95a90 chromedriver + 4070032
+23  chromedriver                        0x0000000102ea5c70 chromedriver + 4136048
+24  libsystem_pthread.dylib             0x000000018b585034 _pthread_start + 136
+25  libsystem_pthread.dylib             0x000000018b57fe3c thread_start + 8
+</msg>
+<status status="FAIL" starttime="20231114 14:45:01.904" endtime="20231114 14:45:02.022"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:01.904" endtime="20231114 14:45:02.022"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:01.903" endtime="20231114 14:45:02.022">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: headless chrome=119.0.6045.123)
+Stacktrace:
+0   chromedriver                        0x0000000102eae004 chromedriver + 4169732
+1   chromedriver                        0x0000000102ea5ff8 chromedriver + 4136952
+2   chromedriver                        0x0000000102afb500 chromedriver + 292096
+3   chromedriver                        0x0000000102af3f20 chromedriver + 261920
+4   chromedriver                        0x0000000102ae4790 chromedriver + 198544
+5   chromedriver                        0x0000000102ae5bd0 chromedriver + 203728
+6   chromedriver                        0x0000000102ae4aec chromedriver + 199404
+7   chromedriver                        0x0000000102ae39d0 chromedriver + 195024
+8   chromedriver                        0x0000000102ae397c chromedriver + 1...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000102b354b8 chromedriver + 529592
+16  chromedriver                        0x0000000102e74334 chromedriver + 3932980
+17  chromedriver                        0x0000000102e78970 chromedriver + 3950960
+18  chromedriver                        0x0000000102e5c774 chromedriver + 3835764
+19  chromedriver                        0x0000000102e79478 chromedriver + 3953784
+20  chromedriver                        0x0000000102e4eab4 chromedriver + 3779252
+21  chromedriver                        0x0000000102e95914 chromedriver + 4069652
+22  chromedriver                        0x0000000102e95a90 chromedriver + 4070032
+23  chromedriver                        0x0000000102ea5c70 chromedriver + 4136048
+24  libsystem_pthread.dylib             0x000000018b585034 _pthread_start + 136
+25  libsystem_pthread.dylib             0x000000018b57fe3c thread_start + 8</status>
+</test>
+<test id="s1-s1-t2" name="Click Register Link" line="12">
+<kw name="Go To Main Page" library="resource" type="SETUP">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231114 14:45:02.023" level="INFO">Opening url 'http://localhost:5001'</msg>
+<msg timestamp="20231114 14:45:02.136" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231114 14:45:02.136" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: headless chrome=119.0.6045.123)
+Stacktrace:
+0   chromedriver                        0x0000000102eae004 chromedriver + 4169732
+1   chromedriver                        0x0000000102ea5ff8 chromedriver + 4136952
+2   chromedriver                        0x0000000102afb500 chromedriver + 292096
+3   chromedriver                        0x0000000102af3f20 chromedriver + 261920
+4   chromedriver                        0x0000000102ae4790 chromedriver + 198544
+5   chromedriver                        0x0000000102ae5bd0 chromedriver + 203728
+6   chromedriver                        0x0000000102ae4aec chromedriver + 199404
+7   chromedriver                        0x0000000102ae39d0 chromedriver + 195024
+8   chromedriver                        0x0000000102ae397c chromedriver + 194940
+9   chromedriver                        0x0000000102ae1ef4 chromedriver + 188148
+10  chromedriver                        0x0000000102ae29e0 chromedriver + 190944
+11  chromedriver                        0x0000000102afdebc chromedriver + 302780
+12  chromedriver                        0x0000000102b7bda4 chromedriver + 818596
+13  chromedriver                        0x0000000102b7b818 chromedriver + 817176
+14  chromedriver                        0x0000000102b345e8 chromedriver + 525800
+15  chromedriver                        0x0000000102b354b8 chromedriver + 529592
+16  chromedriver                        0x0000000102e74334 chromedriver + 3932980
+17  chromedriver                        0x0000000102e78970 chromedriver + 3950960
+18  chromedriver                        0x0000000102e5c774 chromedriver + 3835764
+19  chromedriver                        0x0000000102e79478 chromedriver + 3953784
+20  chromedriver                        0x0000000102e4eab4 chromedriver + 3779252
+21  chromedriver                        0x0000000102e95914 chromedriver + 4069652
+22  chromedriver                        0x0000000102e95a90 chromedriver + 4070032
+23  chromedriver                        0x0000000102ea5c70 chromedriver + 4136048
+24  libsystem_pthread.dylib             0x000000018b585034 _pthread_start + 136
+25  libsystem_pthread.dylib             0x000000018b57fe3c thread_start + 8
+</msg>
+<status status="FAIL" starttime="20231114 14:45:02.023" endtime="20231114 14:45:02.136"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.023" endtime="20231114 14:45:02.136"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.023" endtime="20231114 14:45:02.137">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: headless chrome=119.0.6045.123)
+Stacktrace:
+0   chromedriver                        0x0000000102eae004 chromedriver + 4169732
+1   chromedriver                        0x0000000102ea5ff8 chromedriver + 4136952
+2   chromedriver                        0x0000000102afb500 chromedriver + 292096
+3   chromedriver                        0x0000000102af3f20 chromedriver + 261920
+4   chromedriver                        0x0000000102ae4790 chromedriver + 198544
+5   chromedriver                        0x0000000102ae5bd0 chromedriver + 203728
+6   chromedriver                        0x0000000102ae4aec chromedriver + 199404
+7   chromedriver                        0x0000000102ae39d0 chromedriver + 195024
+8   chromedriver                        0x0000000102ae397c chromedriver + 1...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000102b354b8 chromedriver + 529592
+16  chromedriver                        0x0000000102e74334 chromedriver + 3932980
+17  chromedriver                        0x0000000102e78970 chromedriver + 3950960
+18  chromedriver                        0x0000000102e5c774 chromedriver + 3835764
+19  chromedriver                        0x0000000102e79478 chromedriver + 3953784
+20  chromedriver                        0x0000000102e4eab4 chromedriver + 3779252
+21  chromedriver                        0x0000000102e95914 chromedriver + 4069652
+22  chromedriver                        0x0000000102e95a90 chromedriver + 4070032
+23  chromedriver                        0x0000000102ea5c70 chromedriver + 4136048
+24  libsystem_pthread.dylib             0x000000018b585034 _pthread_start + 136
+25  libsystem_pthread.dylib             0x000000018b57fe3c thread_start + 8</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231114 14:45:02.137" endtime="20231114 14:45:02.199"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:00.988" endtime="20231114 14:45:02.199"/>
+</suite>
+<suite id="s1-s2" name="Login" source="/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/tests/login.robot">
+<kw name="Open And Configure Browser" library="resource" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231114 14:45:02.204" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102b4ec80&gt;</msg>
+<status status="PASS" starttime="20231114 14:45:02.204" endtime="20231114 14:45:02.204"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231114 14:45:02.204" endtime="20231114 14:45:02.204"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20231114 14:45:02.204" endtime="20231114 14:45:02.205"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231114 14:45:02.205" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20231114 14:45:02.205" endtime="20231114 14:45:02.971"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231114 14:45:02.972" endtime="20231114 14:45:02.972"/>
+</kw>
+<status status="PASS" starttime="20231114 14:45:02.204" endtime="20231114 14:45:02.972"/>
+</kw>
+<test id="s1-s2-t1" name="Login With Correct Credentials" line="8">
+<kw name="Create User And Go To Login Page" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231114 14:45:02.974" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231114 14:45:02.974" endtime="20231114 14:45:02.974"/>
+</kw>
+<kw name="Go To Login Page" library="resource">
+<status status="NOT RUN" starttime="20231114 14:45:02.974" endtime="20231114 14:45:02.974"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231114 14:45:02.974" endtime="20231114 14:45:02.974"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.972" endtime="20231114 14:45:02.974"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.972" endtime="20231114 14:45:02.975">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s2-t2" name="Login With Incorrect Password" line="14">
+<kw name="Create User And Go To Login Page" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231114 14:45:02.977" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231114 14:45:02.976" endtime="20231114 14:45:02.977"/>
+</kw>
+<kw name="Go To Login Page" library="resource">
+<status status="NOT RUN" starttime="20231114 14:45:02.977" endtime="20231114 14:45:02.977"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231114 14:45:02.977" endtime="20231114 14:45:02.977"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.975" endtime="20231114 14:45:02.977"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.975" endtime="20231114 14:45:02.977">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s2-t3" name="Login With Nonexistent Username" line="20">
+<kw name="Create User And Go To Login Page" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20231114 14:45:02.979" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20231114 14:45:02.979" endtime="20231114 14:45:02.979"/>
+</kw>
+<kw name="Go To Login Page" library="resource">
+<status status="NOT RUN" starttime="20231114 14:45:02.979" endtime="20231114 14:45:02.979"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<status status="NOT RUN" starttime="20231114 14:45:02.979" endtime="20231114 14:45:02.979"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.978" endtime="20231114 14:45:02.979"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.977" endtime="20231114 14:45:02.980">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231114 14:45:02.980" endtime="20231114 14:45:03.042"/>
+</kw>
+<status status="FAIL" starttime="20231114 14:45:02.200" endtime="20231114 14:45:03.042"/>
+</suite>
+<status status="FAIL" starttime="20231114 14:45:00.981" endtime="20231114 14:45:03.042"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="5" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="Home">Tests.Home</stat>
+<stat pass="0" fail="3" skip="0" id="s1-s2" name="Login">Tests.Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231114 14:45:01.059" level="ERROR">Error in file '/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/tests/resource.robot' on line 3: Initializing library 'AppLibrary' with no arguments failed: ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x102a376a0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x102a376a0&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x102a376a0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 8, in __init__
+    self.reset_application()
+  File "/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 11, in reset_application
+    requests.post(f"{self._base_url}/tests/reset")
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x102a376a0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<msg timestamp="20231114 14:45:02.203" level="ERROR">Error in file '/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/tests/resource.robot' on line 3: Initializing library 'AppLibrary' with no arguments failed: ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x102b4d660&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x102b4d660&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x102b4d660&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 8, in __init__
+    self.reset_application()
+  File "/Users/adarautiainen/Documents/palautusrepositorio/viikko3/web-login/src/AppLibrary.py", line 11, in reset_application
+    requests.post(f"{self._base_url}/tests/reset")
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/adarautiainen/Library/Caches/pypoetry/virtualenvs/web-login-sEj47791-py3.10/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5001): Max retries exceeded with url: /tests/reset (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x102b4d660&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+</errors>
+</robot>
