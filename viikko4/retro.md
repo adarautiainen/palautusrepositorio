@@ -1,4 +1,4 @@
-# Retrospektiivi
+viikko5# Retrospektiivi
 
 Retrospektiivissä projektitiimi tutkailee omia työskentelymenetelmiään. Retrospektiivin tarkoituksena on keskustella siitä mikä sprintissä meni hyvin ja voisiko jotain parantaa. Retrospektiivien pitämiseen on monia erilaisia tapoja, esimerkiksi Start, Stop, Continue, More of, Less of Wheel ja Glad, Sad, Mad. 
 
